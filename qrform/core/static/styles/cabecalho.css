@@ -1,0 +1,106 @@
+body{
+	font-size: 12pt;
+}
+#logo{
+	float: top;
+	position: absolute;
+	width: 20%;
+}
+#btn-menu{
+	display: none;
+}
+#cabecalho{
+	color: white;
+	width: 100%;
+	font-size: 12pt;
+	background-color: rgba(0,0,0,.4);
+	position: absolute;
+}
+#cabecalho label{
+	font-size: 16pt;
+	display: none;
+	padding: 8pt 10pt;
+	width: 15pt;
+}
+#cabecalho label:hover{
+	color: #dc583a;
+	background-color: rgba(0,0 ,0,.5);
+}
+.menu{
+	margin-left: 70pt;
+}
+.menu ul{
+	list-style: none;
+	margin: 0pt;
+	padding: 0pt;
+	display: flex;
+	/*transition: all .5s;*/
+	justify-content: center;
+}
+.menu li a{
+	color: white;
+	text-decoration:none;
+	padding: 25pt 10pt;
+	display: block;
+}
+.menu li a:hover{
+	background-color: rgba(0,0 ,0,.5);
+	padding: 24pt 10pt;
+	border-bottom: 2pt solid #dc583a;
+}
+#imagem{
+	display: block;
+	width: 100%;
+}
+#imagem-menu{
+	display: block;
+	width: 100%;
+	height: 60pt;
+	margin-bottom: 100pt;
+}
+
+@media(max-width: 768px){
+	#logo{
+		display: none;
+	}
+	#cabecalho label{
+		display: block;
+	}
+	.menu{
+		margin-left: 0pt;
+	}
+	.menu ul{
+		position: absolute;
+		background-color: rgba(0,0 ,0,.5);
+		width: 100%;
+		flex-direction: column;
+		margin-left: -100%;
+		transition: all .5s;
+	}
+	.menu li a{
+		padding: 7pt 10pt;
+	}
+	#btn-menu:checked ~ .menu ul{
+		margin-left: 0pt;
+	}
+	#btn-menu:checked ~ #cabecalho label{
+		color: #dc583a;
+	}
+	.menu li a:hover{
+		padding: 6pt 10pt;
+		border-bottom: 1pt solid #dc583a;
+		background-color: rgba(0,0 ,0,.5);
+	}
+	#cabecalho{
+		font-size: 8pt;
+	}
+	#pi, #qs ,#nf ,#af, #fc{
+		padding: 6pt 10pt;
+		border-bottom: 1pt solid #dc583a;
+	}
+	#imagem-menu{
+		display: block;
+		width: 100%;
+		height: 38pt;
+	}
+}

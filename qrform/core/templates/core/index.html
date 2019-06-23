@@ -1,0 +1,178 @@
+{% load static %}
+
+<html>
+<head>
+
+	<title>QR Form</title>
+
+	<meta charset ="utf-8"/>
+	<meta name="description" content="Site desenvolvido para apresentação ao curso de Sistemas de Informação - Web II"/>
+	<meta name="keywords" content="sistemas fasa graduação"/>
+	<meta name="authores" content="Pedro Luã, Roger Kennedy, Wesley Kaique"/>
+
+	<link rel="stylesheet" href="{%static 'styles/index.css' %}">
+	<link rel="stylesheet" href="{%static 'styles/cabecalho.css' %}">
+	<link rel="stylesheet" href="{%static 'styles/rodape.css' %}">
+
+</head>
+
+<body>
+
+	<header id="cabecalho">
+		<input type="checkbox" id="btn-menu"/>
+		<label for="btn-menu">&#9776;</label>
+		<nav class="menu">
+			<ul>
+				<li><a id="pi" href="/">Página Inicial</a></li>
+				<li><a id="qs" href="#quemsomos">Quem Somos</a></li>
+				<li><a id="fc" href="#faleconosco">Fale Conosco</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<a id="logo" href="/"><img src="{%static 'images/qrlogo3.png' %}"  width="100%"/></a>
+
+	<img name="img_apoio" src="{%static 'images/fundo.jpg' %}" id="imagem" width="100%"/>
+
+	<img src="{%static 'images/fundo_passos.jpg' %}" width="50%"><img src="{%static 'images/fundo_relatorios.jpg' %}" width="50%">
+
+	<div id="equipe">
+		<div>
+			<p class="titulo1"><a name="quemsomos">Nossa equipe</a></p>
+			<p class="subtitulo">Conheça os programadores por trás dos formulários<hr/></p>
+		</div>
+		<img class="fotos" src="{%static 'images/tag1.jpg' %}">
+		{% for team in teams %}
+		<div class="fotos">
+			<img width="220px" src="{{team.photo}}">
+			<p class="equipe-nome">{{ team.name }}</p>
+			<p class="equipe-funcao">{{ team.function }}</p>
+		</div>
+		{% endfor %}
+		<!--
+		<div class="fotos">
+			<img src="{%static 'images/f1.jpg' %}">
+			<p class="equipe-nome">Nome</p>
+			<p class="equipe-funcao">Analista de Sistemas</p>
+		</div>
+		-->
+		<img class="fotos" src="{%static 'images/tag2.jpg' %}">
+	</div>
+
+	<div>
+		<div id="empresa">
+			<p class="titulo1">Nossa empresa<hr/></p>
+			<p class="texto">A QR Form atua na criação de formulários acessados via QR Code, coletando informações (ideias e opiniões) de clientes sobre as empresas, gerando assim relatórios personalizados para que cada empresa consiga visualizar a satisfação e/ou insatisfação de seu público para que com isso possa traçar o melhor caminho visando agradar e conquistar cada vez mais clientes.</p>
+		</div>
+		<div>
+			<div id="empresa-missao">
+				<p class="titulo2">Missão<hr/></p>
+				<p class="texto">Oferecer aos clientes um canal de fácil comunicação com as empresas, para avaliação de seus serviços e oferecer aos prestadores de serviço uma gestão de informações para melhoria continua de seus serviços.</p>
+			</div>
+			<div id="empresa-visao">
+				<p class="titulo2">Visão<hr/></p>
+				<p class="texto">Ser referência em métodos de obtenção e gestão de dados para melhoria contínua com base nas ideias e opiniões dos clientes, buscando sempre organizá-las de forma que as empresas consigam traçar o melhor caminho para agradar e conquistar mais clientes.</p>
+			</div>
+			<div id="empresa-valores">
+				<p class="titulo2">Valores<hr/></p>
+				<p class="texto">Nossa conduta deve transmitir confiança e foco para ajudar empresas em sua melhoria contínua; clareza e integridade no gerenciamento de dados que expressam o sentimento de clientes para com as empresas; respeito e humanidade com nossos clientes e equipe.</p>
+			</div>
+		</div>
+	</div>
+
+	<img id="img_mvv" src="{%static 'images/missao.jpg' %}">
+
+	<img src="{%static 'images/divisao3.jpg' %}" width="100%">
+
+	<div id="conteudo">
+		<div>
+			<p class="titulo1"><a name="faleconosco">Fale Conosco</a></p>
+			<p class="subtitulo">Nos ajude a fazer sempre o melhor para vocês<hr/></p>
+		</div>
+		<form id="formulario" class="fomulario" method="post" action=".">
+			<div class="dados" id="dados">
+				{% csrf_token %}
+				<div id="dados1" class="caixa1">
+					<p><label class="texto" for="nome">Nome *</label><br><br>
+					{{form.nome.errors}}
+					{{form.nome}}
+					</p><br><br><p><label class="texto" for="phone">Telefone *</label><br><br>
+					{{form.telefone.errors}}
+					{{form.telefone}}
+					</p>
+				</div>
+				<div id="dados2" class="caixa2">
+					<p><label class="texto" for="caixaemail">E-Mail *</label><br><br>
+					{{form.email.errors}}
+					{{form.email}}
+					</p><br><br><p><label class="texto" id="assunto" for="caixaselect">Assunto *</label><br><br>
+					{{form.assunto.errors}}
+					{{form.assunto}}
+					</p>
+				</div><br>
+				<div id="dados3">
+					<p><label for="textarea" class="texto">Mensagem *</label><br><br>
+					{{form.mensagem.errors}}
+					{{form.mensagem}}
+					</p><br><br><br>
+					<button type="submit" class="botton" id="enviar" tabindex="6"><span>Enviar</span></button>
+					<!--<input id="enviar" type="submit" tabindex="6" class="botton"/>-->
+				</div>
+			</div>
+		</form>
+		<!--
+		<form id="formulario" class="formulario" method="get" action=".">
+			<div class="dados" id="dados">
+				<div id="dados1" class="dados1">
+						<p><label class="texto" for="nome">Nome *</label><br><br>
+						<input id="nome" type="text" required tabindex="1" placeholder="Nome" class="caixa"/></p><br>
+						<p><label class="texto" for="phone">Telefone *</label><br><br>
+						<input id="phone" type="text" require tabindex="2" placeholder="(xx) xxxxx-xxx" class="caixa"/></p>
+				</div>
+				<div id="dados2" class="caixa2">
+						<p><label class="texto" for="caixaemail">E-Mail *</label><br><br>
+						   <input type="email" placeholder="Email" required tabindex="3" class="caixa" id="caixaemail" /></p><br>
+						<p><label class="texto" id="assunto" for="caixaselect">Assunto *</label><br><br>
+						<select class="select" id="caixaselect" required="" tabindex="4">
+							<option  value ='Dúvida'>Dúvida</option>
+							<option  value ='Informação'>Informação</option>
+							<option  value ='Comentário'>Comentário</option>
+							<option  value ='Sugestão'>Sugestão</option>
+							<option  value ='Reclamação'>Reclamação</option>
+						</select></p>
+				</div><br>
+				<div id="dados3">
+						<p><label for="textarea" class="texto">Mensagem *</label><br><br></p>
+						<textarea id="textarea" cols="40" tabindex="5" required="" rows="7" style="resize:horizontal;" placeholder="Digite seu texto aqui" class="area"></textarea>
+						<br><br><br><input id="enviar" type="submit" tabindex="6" class="botton"></input>
+
+				</div>
+			</div>
+		</form>
+		-->
+	</div>
+
+	<footer id="rodape">
+		<div id="dados-empresa">
+			<div id="endereco">
+				ENDEREÇO<br/><br/>
+				Av. Osmane Barbosa, 1179-1199<br/>
+				Conjunto Residencial JK<br/>
+				CEP 39404-006<br/>
+				Montes Claros - MG
+			</div>
+			<div id="telefones">
+				TELEFONES<br/><br/>
+				Informações para Contratação<br/>
+				(38) 99999-9999<br/>
+				Sugestões ou Reclamações<br/>
+				contato@qrform.com.br<br/>
+			</div>
+		</div>
+		<div id="direitos">
+			<p>&#9400; Copyright 2019 - QR Form</p>
+		</div>
+	</footer>
+
+</body>
+</html>

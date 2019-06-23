@@ -1,0 +1,258 @@
+body{
+	margin: 0pt;
+	padding: 0pt;
+	font-family: 'Segoe UI Semibold';
+	font-size: 12pt;
+	color: gray;
+}
+#pi{
+	padding: 24pt 10pt;
+	border-bottom: 2pt solid #dc583a;
+}
+#conteudo{
+	height: auto;
+}
+
+.titulo1{
+	margin: 0pt;
+	padding: 0pt;
+	font-family: 'Forte';
+	font-size: 20pt;
+	color: black;
+	text-align: center;
+}
+.titulo2{
+	font-family: 'Forte';
+	font-size: 15pt;
+	color: black;
+	text-align: center;
+}
+.subtitulo{
+	margin: 0pt;
+	padding: 0pt;
+	font-family: 'Segoe UI Semibold';
+	font-size: 12pt;
+	color: gray;
+	text-align: center;
+}
+.texto{
+	font-size: 12pt;	
+}
+#equipe{
+	/*background-color: #7fccbf;*/
+	display: block;
+	height: 300pt;
+	width: 96%;
+	text-align: center;
+	padding: 50pt 20pt;
+	float: center;
+}
+.equipe-nome{
+	margin: 0pt;
+	padding: 0pt;
+	font-family: 'Forte';
+	font-size: 13pt;
+	color: black;
+}
+.equipe-funcao{
+	margin: 0pt;
+	padding: 0pt;
+}
+.fotos{
+	padding: 10pt 20pt;
+	float: left;
+}
+
+#empresa{
+	display: block;
+	height: 100pt;
+	width: 96%;
+	text-align: center;
+	padding: 10pt 20pt;
+	float: center;
+}
+#empresa-missao{
+	display: block;
+	height: 260pt;
+	width: 25%;
+	text-align: left;
+	padding: 10pt 25pt;
+	float: left;
+}
+#empresa-valores{
+	display: block;
+	height: 260pt;
+	width: 25%;
+	text-align: left;
+	padding: 10pt 25pt;
+	float: left;
+}
+#empresa-visao{
+	display: block;
+	height: 260pt;
+	width: 25%;
+	text-align: left;
+	padding: 10pt 25pt;
+	float: left;
+}
+#img_mvv{
+	width: 160px;
+	height: 160px;
+	padding-top: 30pt;
+	padding-left: 30pt;
+	padding-bottom: 20pt
+}
+
+
+
+
+
+/*===================Formulario==============================*/
+#conteudo{
+	padding-top: 50pt;
+	padding-bottom: 40pt;
+	padding-left: 20pt;
+	width: 97%;
+	height: 550pt;
+}
+#dados{
+	width: 100%;
+}
+#dados1{
+	float:left;
+	width: 50%;
+	height: 40%;
+}
+#dados2{
+	float:right;
+	width: 50%;
+	height: 40%;
+}
+#dados3{
+	width: 50%;
+	margin-top: 15pt;
+	height: 200pt;
+	position: relative;
+	float:left;
+}
+
+#dados1 .caixa:hover{
+	background-color: rgba(218,88,58,.05);
+}
+#dados2 .caixa:hover{
+	background-color: rgba(218,88,58,.05);
+}
+#dados3 .area:hover{
+	background-color: rgba(218,88,58,.05);
+}
+/*============ Div Inputs e Textos =============== */
+
+/*=== Caixa e Email Nome e Telefone ===*/
+
+#dados1 .caixa{
+	width: 80%;
+	padding:10px;
+	margin-left:15pt;
+	border-bottom:0pt solid;
+	outline-color: rgba(218,88,58,.55);
+	background-color: rgba(0,0,0,.09);
+	border-radius:2px;
+	position: relative;
+}
+#dados2 .caixa{
+	width: 80%;
+	padding: 10px;
+	border-bottom:0pt solid;
+	outline-color: rgba(218,88,58,.55);
+	background-color: rgba(0,0,0,.09);
+	border-radius:2px;
+}
+/*=== Caixa de Assunto ===*/
+#caixaselect{
+	width:83%;
+	padding: 10px;
+	border-bottom:0pt solid;
+	outline-color: rgba(218,88,58,.55);
+	background-color: rgba(0,0,0,.09);
+	border-radius:2px;
+	font-color:rgba(0,0,0.5);
+}
+
+#caixaselect:hover{
+	width:83%;
+	padding: 10px;
+	border-bottom:0pt solid;
+	outline-color: rgba(218,88,58,.55);
+	background-color: rgba(218,88,58,.05);
+	border-radius:2px;
+	font-color:rgba(0,0,0.5);
+
+}
+/*=== Caixa da Mensagem ===*/
+#dados3 .area{
+	width: 75%;
+	padding:30px;
+	margin-left: 15pt;
+	border-bottom:0pt solid;
+	outline-color: rgba(218,88,58,.55);
+	background-color: rgba(0,0,0,.09);
+	border-radius:2px;
+}
+/*=== Titulos das caixas (Label) ===*/
+#dados1 .texto{
+	margin-left: 15pt;
+	color:rgba(0,0,0,.6);
+}
+#dados2 .texto{
+	color:rgba(0,0,0,.6);
+}
+#dados3 .texto{
+	margin-left: 15pt;
+	color:rgba(0,0,0,.6);
+}
+
+/*===================Botao Enviar==============================*/
+form .dados .botton{
+	margin-left: 15pt;
+	background-color: rgba(218,88,58,1);
+	padding:12px 25px;
+	cursor:pointer;
+    border:0px;
+	border-radius: 1px;
+	color: #fff;
+	border-bottom: 1px solid #500707;  
+    border-right: 1px solid #500707;
+    outline-color: rgba(218,88,58,.55);
+}
+form .dados .botton:hover{
+	margin-left: 15pt;
+    background-color: #ff6631;
+    padding:13px 27px;
+	cursor:pointer;
+    border:0px;
+	border-radius: 0px;
+	color: #fff;
+	border-bottom: 1px solid #500707;  
+    border-right: 1px solid #500707;
+    outline-color: rgba(218,88,58,.55);
+}
+
+@media(max-width: 768px){ 
+	#conteudo{
+		height: 650pt;
+	}
+	#dados1{
+		width: 100%;
+	}
+	#dados2{
+		float:left;
+		width: 100%;
+		margin-left: 15pt;
+	}
+	#dados3{
+		width: 100%;
+		margin-top: 15pt;
+		height: 200pt;
+		position: relative;
+	}
+}

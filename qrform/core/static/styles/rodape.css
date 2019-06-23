@@ -1,0 +1,35 @@
+#rodape{
+	display: block;
+	width: 100%;
+	height: 132pt;
+	color: white;
+	font-size: 10pt;
+}
+#dados-empresa{
+	width: 100%;
+	height: 70pt;
+	background-color: rgba(0,0,0,.8);
+	text-align: center;
+	padding: 15pt 0pt 15pt 0pt;
+}
+#endereco{
+	float: left;
+	width: 50%;
+}
+#telefones{
+	float: right;
+	width: 50%;
+}
+#direitos{
+	width: 100%;
+	height: 30pt;
+	background-color: rgba(0,0,0,.6);
+	text-align: center;
+	padding: 1pt 0pt 1pt 0pt;
+}
+
+@media(max-width: 768px){
+	#dados-empresa, #direitos{
+		font-size: 8pt;
+	}
+}
