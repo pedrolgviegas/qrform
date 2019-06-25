@@ -1,1 +1,1 @@
-web: gunicorn workshop.wsgi  --log-file -
+web: gunicorn qrform.wsgi  --log-file -
